@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MVP Portfolio</title>
+<meta name="description" content="아이디어에서 MVP까지 — 만들고 검증한 프로젝트 모음">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  --bg: #fafaf9; --surface: #ffffff; --text: #18181b; --muted: #71717a; --line: #e4e4e7; --track: #f0f0f1;
+  --building: #2563eb; --shipped: #16a34a; --dropped: #a1a1aa;
+  --ok: #16a34a; --bad: #dc2626; --warn: #d97706;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0c0e; --surface: #17171a; --text: #f4f4f5; --muted: #a1a1aa; --line: #2a2a2e; --track: #26262a;
+    --building: #60a5fa; --shipped: #4ade80; --dropped: #71717a;
+    --ok: #4ade80; --bad: #f87171; --warn: #fbbf24;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.6 "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  -webkit-font-smoothing: antialiased; word-break: keep-all; }
+main { max-width: 1080px; margin: 0 auto; padding: 72px 20px 96px; }
+header { margin-bottom: 48px; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.03em; margin: 0 0 16px; font-weight: 800; }
+.lead { font-size: 18px; color: var(--muted); margin: 0; max-width: 560px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 40px 0 56px; max-width: 560px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+.stat b { display: block; font-size: 28px; font-weight: 750; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 20px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px;
+  display: flex; flex-direction: column; gap: 16px; transition: transform .15s, box-shadow .15s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -16px rgba(0,0,0,.25); }
+.card.dropped { opacity: .7; }
+.top { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--c); }
+.pill .dot { background: var(--c); }
+h3 { font-size: 21px; letter-spacing: -0.02em; margin: 0 0 6px; line-height: 1.3; }
+.summary { margin: 0; color: var(--muted); font-size: 15px; }
+.hypo { margin: 0; font-size: 14px; padding: 12px 14px; border-radius: 10px; background: var(--track); }
+.hypo em { font-style: normal; font-weight: 600; margin-right: 6px; }
+.progress { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.track { flex: 1; height: 6px; border-radius: 3px; background: var(--track); overflow: hidden; }
+.fill { height: 100%; border-radius: 3px; background: var(--c); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.meta .ok { color: var(--ok); } .meta .bad { color: var(--bad); } .meta .warn { color: var(--warn); }
+.links { display: flex; gap: 8px; margin-top: auto; }
+.btn { font-size: 14px; font-weight: 600; text-decoration: none; padding: 9px 14px; border-radius: 10px; border: 1px solid var(--line); color: var(--text); }
+.btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+.btn:hover { border-color: var(--muted); }
+.empty { color: var(--muted); border: 1px dashed var(--line); border-radius: 18px; padding: 40px; text-align: center; }
+footer { margin-top: 72px; font-size: 13px; color: var(--muted); }
+@media (max-width: 520px) { main { padding-top: 48px; } .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <p class="eyebrow">MVP Portfolio</p>
+  <h1>아이디어를 빠르게<br>만들고 검증합니다</h1>
+  <p class="lead">가설 하나를 검증할 만큼만 만든 MVP들입니다. 각 프로젝트는 핵심 가설과 진행 상황을 함께 보여줍니다.</p>
+</header>
+<div class="stats"><div class="stat"><b>0</b><span><span class="dot" style="background: var(--shipped)"></span>출시</span></div><div class="stat"><b>1</b><span><span class="dot" style="background: var(--building)"></span>개발 중</span></div><div class="stat"><b>0</b><span><span class="dot" style="background: var(--dropped)"></span>중단</span></div></div>
+<h2>Projects</h2>
+<div class="grid">
+<article class="card building" style="--c: var(--building)">
+<div class="top"><span class="pill"><span class="dot"></span>개발 중</span><span>#0001</span></div>
+<div><h3>더치페이 계산기</h3><p class="summary">회식·모임 총무가 메뉴별로 누가 먹었는지 체크만 하면 1인당 송금액을 바로 계산해 주는 웹앱.</p></div>
+<p class="hypo"><em>가설</em>총무는 항목별로 &quot;누가 먹었는지&quot; 체크하는 수고를 감수하고, 그 결과를 실제 정산 공지에 쓴다.</p>
+<div class="progress"><span>MVP</span><div class="track"><div class="fill" style="width:100%"></div></div><span>5/5</span></div>
+<div class="meta"><span>CI <span class="ok">● 통과</span></span><span>최근 업데이트 2026-09-23</span></div>
+</article>
+</div>
+<footer>scripts/dashboard.py로 자동 생성됨</footer>
+</main>
+</body>
+</html>
