@@ -67,9 +67,15 @@ footer { margin-top: 72px; font-size: 13px; color: var(--muted); }
   <h1>아이디어를 빠르게<br>만들고 검증합니다</h1>
   <p class="lead">가설 하나를 검증할 만큼만 만든 MVP들입니다. 각 프로젝트는 핵심 가설과 진행 상황을 함께 보여줍니다.</p>
 </header>
-<div class="stats"><div class="stat"><b>0</b><span><span class="dot" style="background: var(--shipped)"></span>출시</span></div><div class="stat"><b>4</b><span><span class="dot" style="background: var(--building)"></span>개발 중</span></div><div class="stat"><b>0</b><span><span class="dot" style="background: var(--dropped)"></span>중단</span></div></div>
+<div class="stats"><div class="stat"><b>0</b><span><span class="dot" style="background: var(--shipped)"></span>출시</span></div><div class="stat"><b>5</b><span><span class="dot" style="background: var(--building)"></span>개발 중</span></div><div class="stat"><b>0</b><span><span class="dot" style="background: var(--dropped)"></span>중단</span></div></div>
 <h2>Projects</h2>
 <div class="grid">
+<article class="card building" style="--c: var(--building)">
+<div class="top"><span class="pill"><span class="dot"></span>개발 중</span><span>#0003</span></div>
+<div><h3>Joint Project Lab</h3><p class="summary">MIT 밖(기업·투자자·기자·지원자)과 안(Sloan·MIT 학생)의 사람들이 / MIT 학과·연구실별로 **최근 3년 연구를 카드로 훑어보고 검색**해 누가 무엇을 하는지 알고 연락할 길을 찾게 한다 / 연구 정보가 학과·PI마다 흩어져 있고 중앙 시스템이 없기 때문에. 스포츠(MIT Sports Lab)는 여러 분야 중 하나의 예시.</p></div>
+<div class="progress"><span>MVP</span><div class="track"><div class="fill" style="width:0%"></div></div><span>0/1</span></div>
+<div class="meta"><span>최근 업데이트 2026-10-12</span></div>
+</article>
 <article class="card building" style="--c: var(--building)">
 <div class="top"><span class="pill"><span class="dot"></span>개발 중</span><span>#0006</span></div>
 <div><h3>Concert Now (보스턴 뮤직 이벤트 레이더)</h3><p class="summary">보스턴/캠브리지에서 라이브 음악·공연·문화 행사를 찾는 사람이 / 언제 어디서 무슨 행사가 있는지 규모·중요도로 걸러서 한눈에 보게 해준다 / 흩어진 공연장·행사 정보를 일일이 찾아다니지 않아도 되게 하기 위해.</p></div>
@@ -94,8 +100,9 @@ footer { margin-top: 72px; font-size: 13px; color: var(--muted); }
 <article class="card building" style="--c: var(--building)">
 <div class="top"><span class="pill"><span class="dot"></span>개발 중</span><span>#0010</span></div>
 <div><h3>NFL Big Data Bowl 2027</h3><p class="summary">데이터 분석 역량을 보여주기 위해 / NFL Big Data Bowl 2027(Kaggle, 주제 &quot;Combine to NFL Performance&quot;)에 University 트랙으로 출전해 / 결선(스카우팅 컴바인 발표) 진출을 노리고, 결과물을 포트폴리오로 남긴다. **상업화 목적 아님.**</p></div>
-<div class="progress"><span>MVP</span><div class="track"><div class="fill" style="width:0%"></div></div><span>0/1</span></div>
-<div class="meta"><span>CI <span class="warn">● 실행 중</span></span><span>최근 업데이트 2026-10-11</span></div>
+<p class="hypo"><em>가설</em>**한 포지션·한 동작에 집중해 컴바인 센서 추적(10Hz)으로 만든 새 지표가, 기존 컴바인 기록(40야드, 3-cone, shuttle 등)보다 신인의 정규시즌 경기력을 더 잘 설명한다.** 이를 코치·스카우트가 바로 쓸 수 있는 형태로 보여주면 University 트랙 결선 수준의 제출물이 된다.</p>
+<div class="progress"><span>MVP</span><div class="track"><div class="fill" style="width:17%"></div></div><span>1/6</span></div>
+<div class="meta"><span>CI <span class="ok">● 통과</span></span><span>최근 업데이트 2026-10-11</span></div>
 </article>
 </div>
 <footer>scripts/dashboard.py로 자동 생성됨</footer>
